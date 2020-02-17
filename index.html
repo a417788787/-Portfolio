@@ -1,5 +1,103 @@
 <!DOCTYPE html>
-<html style="background-color: #adcfcf;">
+<style>
+.h1 {
+text-align: center;
+font-weight: bolder;
+background-color: #eeeeee;
+border-bottom: 3px solid rgba(0, 0, 0, 0.12);
+border-right: 3px solid rgba(0, 0, 0, 0.12);
+border-bottom-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+.subTitle{
+  width: 8rem;
+  font-weight: bolder;
+  background-color: #eeeeee;
+  font-weight: bolder;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  margin:10px 0px;
+}
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.label {
+  width: 75px;
+  height: 42px;
+  background: #ccc;
+  position: relative;
+  display: inline-block;
+  border-radius: 46px;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+.text {
+  color:rgba(255, 255, 255, 0);
+}
+.box {
+position: relative;
+top: 48px; 
+height:0px;
+width:50em;
+border-radius: .25rem;
+border: 1px solid rgba(0, 0, 0, 0);
+}
+.boxText {
+padding: 10px 10px 10px 10px;
+display:none;
+    transition: 2s 1s;
+}
+.box:before {
+display:none;
+}
+.label:after {
+    content: '';
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+}
+.input:checked + .label {
+   background: rgb(108, 255, 54);
+}
+.input:checked + .label:after {
+    left: 40px;
+}
+.input:checked + .label>.text {
+    color:rgba(0, 0, 0, 1);
+    position: relative;
+    transition: color 3s;
+}
+.input:checked + .label>.box :before { 
+    display:block;
+}
+.input:checked + .label>.box{
+    border: 1px solid #d4d4d4;
+    height:200px;
+    transition: 1s;
+    background-color: #eeeeee;
+}
+.input:checked+ .label>.box:after {
+    height:200px;
+}
+.input:checked+ .label>.box>.boxText {
+    display:block;
+    animation: show 1s linear 0s;
+}
+</style>
+<html>
 <head>
 <meta charset="UTF-8">
 <title>TipsNote : GitHub Pages Sample</title>
@@ -8,8 +106,14 @@
 
 <body>
 <main>
-  <h1 style="text-align: center;font-weight: bolder;background-color: #eeeeee;">GitHub Pages のサンプルです</h1>
-  <a href="http://www.tam-tam.co.jp/tipsnote/"><button>TipsNote に戻る</button></a>
+  <h1 class="h1">My Portfolio</h1>
+<div class="subTitle">
+  About Me</div>
+  <input class="input" id="toggle" type="checkbox" style="display:none"/>
+  <label class="label" for="toggle">  
+    <!--p class="text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p-->
+    <div class="box"><p class="boxText">abasdfjaoidfjaonfads</p></div>
+  </label>
 </main>
 
 <script>
